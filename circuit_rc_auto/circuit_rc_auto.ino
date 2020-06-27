@@ -37,12 +37,12 @@ void loop()
     // Les lignes suivantes permettent de recevoir la demi-période du créneau et le nombre d'échantillon.
     // Il n'est pas nécessaire de comprendre les détails. La condition if sert à adapter la réception à l'IDE et à Python
     int type = Serial.peek();
-    if(type == 80){
+    if(type == 80){  // Communication avec Python
       isPython = true;
       Serial.read();
       receive_int(n_ech);  // On récupère le nombre d'échantillons
       receive_int(duree);  // On récupère la demie-période
-    } else {
+    } else {  // Communication avec IDE Arduino/TinkerCad
       n_ech = Serial.parseInt();  // On récupère le nombre d'échantillons
       while(Serial.available()){Serial.read();}  // On vide le buffer
       Serial.println("Entrez la demie-période du créneau en ms");
@@ -50,6 +50,7 @@ void loop()
       duree = Serial.parseInt();  // On récupère la demie-période
       while(Serial.available()){Serial.read();}  // On vide le buffer
     }
+    
     n_ech = min(n_ech, N_MAX);
     duree = min(duree, T_MAX);
     if(n_ech > 0 and duree >0){

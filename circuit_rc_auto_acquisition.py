@@ -15,15 +15,15 @@ write_timeout = 1
 On demande (à décommenter) le nom du fichier pour enregistrer les données
 et le nombre d'échantillons à mesurer pour une distance donnée.
 """
-# filename = input("Entrez le nom du fichier (sans extension - attention si le fichier existe, son contenu sera supprimé) : ") + ".dat"
-# n_echantillons = int(input("Combien d'échantillons (MAX : 5000) pour chaque mesures de temps caractéristique ? ").strip())
+filename = input("Entrez le nom du fichier (sans extension - attention si le fichier existe, son contenu sera supprimé) : ") + ".dat"
+n_echantillons = int(input("Combien d'échantillons (MAX : 5000) pour chaque mesures de temps caractéristique ? "))
 """Sinon on les rentre directement ici"""
-filename = "circuit_rc_auto.dat"
-n_echantillons = 1000
+# filename = "circuit_rc_auto.dat"
+# n_echantillons = 1000
 
 # Entrée de la distance pour le tableau de mesures.
-# duree = int(input("Entrez la durée d'acquisition en millisecondes (MAX : 1000) : ").strip())
-duree = 100
+duree = int(input("Entrez la durée d'acquisition en millisecondes (MAX : 1000) : "))
+# duree = 100
 
 temps = []  # Initialisation de la liste des temps caractéristique mesurés.
 # Ouverture de la communication avec l'Arduino et du fichier de sauvegarde

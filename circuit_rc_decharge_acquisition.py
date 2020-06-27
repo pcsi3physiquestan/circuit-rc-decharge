@@ -14,12 +14,12 @@ write_timeout = 1
 
 On demande le nom du fichier pour enregistrer les données.
 """
-# filename = input("Entrez le nom du fichier (sans extension - attention si le fichier existe, son contenu sera supprimé) : ") + ".dat"
-filename = "circuit_rc_decharge.dat"
+filename = input("Entrez le nom du fichier (sans extension - attention si le fichier existe, son contenu sera supprimé) : ") + ".dat"
+# filename = "circuit_rc_decharge.dat"
 
 # Entrée de la durée d'acquisition
-# duree = int(input("Entrez la durée d'acquisition en millisecondes (MAX : 1000) : ").strip())
-duree = 100
+duree = int(input("Entrez la durée d'acquisition en millisecondes (MAX : 1000) : "))
+# duree = 100
 # Ouverture de la communication avec l'Arduino
 temps = []
 tension = []
